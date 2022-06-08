@@ -7,13 +7,13 @@ public class Main {
     public static void main(String[] args) {
         Random random = new Random();
 
-        Integer[] array = new Integer[10];
+        Integer[] array = new Integer[5];
         ArrayList<Integer> arrayList = new ArrayList<>();
         LinkedList<Integer> linkedList = new LinkedList<>();
 
-        System.out.println("Array:\tArrayList:\tLinkedList:");
+        System.out.println("Array: \tArrayList: \tLinkedList:");
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             array[i] = random.nextInt(2);
             arrayList.add(random.nextInt(2));
             linkedList.add(random.nextInt(2));
@@ -21,19 +21,19 @@ public class Main {
         }
 
         Arrays.sort(array, new Comparator<Integer>() {
-            @Override
             public int compare(Integer o1, Integer o2) {return o1 - o2;}
-        });
+         });
 
         arrayList.sort(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {return o1 - o2;}
+            public int compare( Integer o1, Integer o2) {
+                return o1 - o2;
+            }
         });
 
         linkedList.sort(new Comparator<Integer>() {
-            @Override
             public int compare(Integer o1, Integer o2) {return o1 - o2;}
         });
+
         System.out.println();
         System.out.println("Sort Array:  "+Arrays.toString(array));
         System.out.println("Sort ArrayList:  "+Arrays.toString(arrayList.toArray()));
